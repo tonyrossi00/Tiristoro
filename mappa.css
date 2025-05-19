@@ -1,0 +1,61 @@
+#leave-review {
+    text-align: center;
+    margin: 30px 0;
+   
+}
+.review-button {
+    background-color: #2c7a7b;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.review-button:hover {
+    background-color: #205d5f;
+}
+
+
+#dove-siamo {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    font-family: 'Quicksand', sans-serif;
+}
+
+#dove-siamo h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#dove-siamo p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.map-container iframe {
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 400px) {
+  .map-container iframe {
+    height: 250px;
+  }
+}
+
+

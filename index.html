@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menù Tiristoro</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="mappa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <h1>Menù Tiristoro</h1>
+        <button id="translateBtn" class="btn btn-primary">
+            <img src="img/bandiera1.png" alt="lingua italian"
+                style="width: 20px; height: auto; margin-right: 8px; vertical-align: middle;">IT
+        </button>
+
+    </div>
+    <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 2rem;">
+        Cliccando su ciascuna voce potrai vedere il prezzo, la descrizione e l'immagine.
+    </p>
+
+    <!-- SEZIONE BEVANDE -->
+    <div class="card" onclick="toggleContent(this)">
+        <h2>Bevande</h2>
+        <div class="content">
+            <div class="item" onclick="showModal(event)" data-name="Acqua" data-price="€1.00"
+                data-desc="Acqua naturale o frizzante." data-img="">Acqua
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Caffè" data-price="€1.20"
+                data-desc="Caffè espresso." data-img="">Caffè
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Caffè Macchiato" data-price="€1.50"
+                data-desc="Caffè espresso con una macchia di latte." data-img="">Caffè Macchiato
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Ginseng" data-price="€1.50"
+                data-desc="Bevanda al ginseng." data-img="">Ginseng
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Thè Pesca" data-price="€2.50"
+                data-desc="Thè freddo al gusto pesca." data-img="">Thè
+                Pesca
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Thè Limone" data-price="€2.50"
+                data-desc="Thè freddo al gusto limone." data-img="">
+                Thè Limone
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Succo Pera" data-price="€2.50"
+                data-desc="Succo di pera." data-img="">Succo Pera
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Succo Pesca" data-price="€2.50"
+                data-desc="Succo di pesca." data-img="">Succo Pesca
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Succo Albicocca" data-price="€2.50"
+                data-desc="Succo di albicocca." data-img="">
+                Succo Albicocca
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Coca Cola Zero" data-price="€2.50"
+                data-desc="Coca Cola senza zuccheri." data-img="">Coca Cola Zero
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Coca Cola Originale" data-price="€2.50"
+                data-desc="Classica Coca Cola." data-img="">
+                Coca Cola Originale
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SEZIONE DA MANGIARE -->
+    <div class="card" onclick="toggleContent(this)">
+    <h2>Da Mangiare</h2>
+    <div class="content">
+        <div class="item" onclick="showModal(event)" 
+            data-name="Tagliere Salumi e Formaggi" 
+            data-price="€12.00"
+            data-desc="Assortimento di salumi e formaggi locali."
+            data-img="img/tagliereSalumiFormaggi.jpg"
+            data-allergens="Latte, Solfiti">Tagliere Salumi e Formaggi
+            <button class="toggle-allergens" onclick="toggleAllergens(event)">Mostra allergeni</button>
+            <div class="allergens" style="display:none;">Allergeni: Latte, Solfiti</div>
+        </div>
+
+        <div class="item" onclick="showModal(event)" 
+            data-name="Tagliere Parziale" 
+            data-price="€10.00"
+            data-desc="Selezione ridotta di salumi e formaggi."
+            data-img="https://via.placeholder.com/300x200?text=Tagliere+Parziale"
+            data-allergens="Latte, Solfiti">Tagliere Parziale
+            <button class="toggle-allergens" onclick="toggleAllergens(event)">Mostra allergeni</button>
+            <div class="allergens" style="display:none;">Allergeni: Latte, Solfiti</div>
+        </div>
+
+        <div class="item" onclick="showModal(event)" 
+            data-name="Vaschetta Frutta" 
+            data-price="€4.00"
+            data-desc="Assortimento di frutta fresca di stagione (a disponibilità)."
+            data-img="https://via.placeholder.com/300x200?text=Frutta"
+            data-allergens="Nessuno">Vaschetta Frutta
+            <button class="toggle-allergens" onclick="toggleAllergens(event)">Mostra allergeni</button>
+            <div class="allergens" style="display:none;">Allergeni: Nessuno</div>
+        </div>
+
+        <div class="item" onclick="showModal(event)" 
+            data-name="Panino Porchetta" 
+            data-price="€8.00"
+            data-desc="Panino farcito con porchetta artigianale."
+            data-img="https://via.placeholder.com/300x200?text=Panino+Porchetta"
+            data-allergens="Glutine">Panino Porchetta
+            <button class="toggle-allergens" onclick="toggleAllergens(event)">Mostra allergeni</button>
+            <div class="allergens" style="display:none;">Allergeni: Glutine</div>
+        </div>
+
+        <div class="item" onclick="showModal(event)" 
+            data-name="Pinsa Trancio" 
+            data-price="€3.00"
+            data-desc="Trancio di pinsa farcita."
+            data-img="https://via.placeholder.com/300x200?text=Pinsa+Trancio"
+            data-allergens="Glutine">Pinsa Trancio
+            <button class="toggle-allergens" onclick="toggleAllergens(event)">Mostra allergeni</button>
+            <div class="allergens" style="display:none;">Allergeni: Glutine</div>
+        </div>
+    </div>
+</div>
+    <!-- SEZIONE BIRRE -->
+    <div class="card" onclick="toggleContent(this)">
+        <h2>Birre</h2>
+        <div class="content">
+            <div class="item" onclick="showModal(event)" data-name="Paulaner 0.33L" data-price="€3.00"
+                data-desc="Birra artigianale tedesca." data-img="img/paulaner.jpg">
+                Paulaner 0.33
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Corona 0.33L" data-price="€3.00"
+                data-desc="Birra messicana chiara." data-img="https://via.placeholder.com/300x200?text=Corona">Corona
+                0.33L
+
+            </div>
+            <div class="item"><strong>Birre Speciali Locali</strong></div>
+            <div class="item" onclick="showModal(event)" data-name="Redstone IPA" data-price="€5.00"
+                data-desc="India Pale Ale aromatica." data-img="img/redstoneIpa.jpg">
+                Redstone IPA
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Casello 54" data-price="€5.00"
+                data-desc="Birra bionda artigianale non filtrata." data-img="img/caselloNonFiltrata.jpg">Casello 54
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Millicam Strong" data-price="€5.00"
+                data-desc="Birra strong artigianale." data-img="img/millicam.jpg">Millicam Strong
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Kris Bionda" data-price="€5.00"
+                data-desc="Birra Kris bionda." data-img="img/krisBionda.jpg">Kris
+                Bionda
+
+            </div>
+            <div class="item"><strong>Birre Lattina</strong></div>
+            <div class="item" onclick="showModal(event)" data-name="Krombacher 0.33L" data-price="€3.00"
+                data-desc="Birra tedesca in lattina." data-img="img/Krombacher.jpg">
+                Krombacher 0.33L
+
+            </div>
+            <div class="item"><strong>Birre Bottiglia</strong></div>
+            <div class="item" onclick="showModal(event)" data-name="Corona 0.0 ALC 0.33L" data-price="€3.00"
+                data-desc="Birra analcolica Corona." data-img="img/CoronaZero.jpg">
+                Corona 0.0 ALC 0.33L
+
+            </div>
+            <div class="item" onclick="showModal(event)" data-name="Corsedonk rossa 0.33L" data-price="€3.00"
+                data-desc="Birra belga rossa." data-img="img/CorsedonkRossa.jpg">
+                Corsedonk rossa 0.33L
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+           <img id="modal-img" style="cursor: zoom-in;" onclick="handleImageClick(this.src)" />
+            <p id="modal-desc"></p>
+            <p><strong>Prezzo: </strong><span id="modal-price"></span></p>
+        </div>
+    </div>
+    <!-- Sezione dove gli utenti possono lasciare una recensione su Google Maps -->
+    <div id="leave-review">
+        <h2>Lascia una recensione su Google Maps</h2>
+        <p>Se ti è piaciuto il nostro servizio, lasciaci una recensione su Google! Ci aiuterai a crescere e a
+            migliorare.</p>
+        <a href="https://www.google.com/maps/place/Tiristoro/@42.221747,13.820447,16z/data=!4m8!3m7!1s0x1330316a59e0fe07:0x77fa60d76baaca28!8m2!3d42.2217465!4d13.8204467!9m1!1b1!16s%2Fg%2F11x79nrvgm?hl=it&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" class="review-button">
+            Lascia una recensione
+        </a>
+    </div>
+
+    <!-- SEZIONE MAPPA -->
+    <div id="dove-siamo">
+        <h2>Dove ci troviamo</h2>
+        <p>
+            Tiristoro si trova sulle sponde del fiume Tirino, vicino il tour operator <strong>Majellando</strong>,
+            nei pressi dell’imbarco canoe, in un angolo incontaminato di natura. Un luogo perfetto per rilassarsi
+            dopo un’escursione o un giro in canoa, immersi nel verde della provincia di Pescara.
+        </p>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2954.546907153811!2d13.817689909455725!3d42.22412756742615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1330316a59e0fe07%3A0x77fa60d76baaca28!2sTiristoro!5e0!3m2!1sit!2sit!4v1747079107418!5m2!1sit!2sit"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+        </div>
+    </div>
+
+
+    <script src="scriptMenu.js"></script>
+    <script src="scriptLingua.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
